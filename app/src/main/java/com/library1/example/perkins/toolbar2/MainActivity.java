@@ -2,23 +2,54 @@ package com.library1.example.perkins.toolbar2;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+    private  ArrayList<Integer> my_color_shift_icon_IDs;
+    private int color_shift_icon_ID = 0;
+    private Toolbar toolbar;
+    private boolean isCameraGreen = false;
+    private boolean isRemoteClientConnected= false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        my_color_shift_icon_IDs = new ArrayList<Integer>();
+        my_color_shift_icon_IDs.add(R.drawable.ic_action_color_plain);
+        my_color_shift_icon_IDs.add(R.drawable.ic_action_color_red);
+        my_color_shift_icon_IDs.add(R.drawable.ic_action_color_blue);
+    }
+
+    private void set_connect_camera_icon_green(boolean bset ) {
+        //the green or the grey
+        int id = (bset)?R.drawable.ic_action_connect_camera_green: R.drawable.ic_action_connect_camera;
+        toolbar.getMenu().findItem(R.id.camera).setIcon(id);
+    }
+    private void set_connect_phone_or_headset_green(boolean bset) {
+        //the green or the grey
+        int id = (bset)?R.drawable.ic_action_connect_device_green: R.drawable.ic_action_connect_device;
+        toolbar.getMenu().findItem(R.id.phone_or_headset).setIcon(id);
+    }
+
+    private void cycleToolBar_color_shift_icon(MenuItem item) {
+        //get next ID
+        color_shift_icon_ID = (color_shift_icon_ID+1)%(my_color_shift_icon_IDs.size());
+        //set the icon
+        item.setIcon(getResources().getDrawable(my_color_shift_icon_IDs.get(color_shift_icon_ID)));
     }
 
     @Override
@@ -38,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         switch (id) {
             case R.id.settings:
                 Toast.makeText(this, "settings goes here", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, SettingsActivity.class));
                 return true;
             case R.id.reset:
                 doReset();
@@ -48,11 +80,26 @@ public class MainActivity extends AppCompatActivity {
             case R.id.about:
                 doHelp();
                 return true;
+            case R.id.color_shift:
+                cycleToolBar_color_shift_icon(item);
+                //TODO set off color shift code
+                break;
+
+            case R.id.camera:
+                isCameraGreen = !isCameraGreen;
+                set_connect_camera_icon_green(isCameraGreen);
+                //TODO set off color shift
+                break;
+            case R.id.phone_or_headset:
+                isRemoteClientConnected = !isRemoteClientConnected;
+                set_connect_phone_or_headset_green(isRemoteClientConnected);
+                //TODO set off color shift
         }
 
         //all else fails let super handle it
         return super.onOptionsItemSelected(item);
     }
+
 
     private void doHelp() {
         // Create out AlterDialog
@@ -92,4 +139,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }).show();
     }
+
+
 }

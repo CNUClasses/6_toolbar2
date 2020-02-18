@@ -8,7 +8,49 @@
         android:orderInCategory="1"
         android:visible="true"
         app:showAsAction="always"></item>
+    <item
+        android:title="Exit to Main"
+        android:id="@+id/exit"
+        android:icon="@drawable/ic_action_exit_to_app"
+        android:orderInCategory="1"
+        android:visible="true"
+        app:showAsAction="always"></item>
+    <item
+        android:title="Color Shift"
+        android:id="@+id/color_shift"
+        android:icon="@drawable/ic_action_color_plain"
+        android:orderInCategory="1"
+        android:visible="true"
+        app:showAsAction="always"></item>
+    <item
+        android:title="Connect to Sony Camera"
+        android:id="@+id/camera"
+        android:icon="@drawable/ic_action_connect_camera"
+        android:orderInCategory="1"
+        android:visible="true"
+        app:showAsAction="always"></item>
+    <item
+        android:title="Connect to Ophir Power Meter"
+        android:id="@+id/power_meter"
+        android:icon="@drawable/ic_action_power_meter"
+        android:orderInCategory="1"
+        android:visible="true"
+        app:showAsAction="always"></item>
+    <item
+        android:title="Connect to Phone or Headset"
+        android:id="@+id/phone_or_headset"
+        android:icon="@drawable/ic_action_connect_device"
+        android:orderInCategory="1"
+        android:visible="true"
+        app:showAsAction="always"></item>
 
+    <item
+        android:title="Toggle Orientation"
+        android:id="@+id/orientation"
+        android:icon="@drawable/ic_action_screen_rotate"
+        android:orderInCategory="1"
+        android:visible="true"
+        app:showAsAction="always"></item>
     <item
         android:title="Share"
         android:id="@+id/share"
@@ -16,6 +58,12 @@
         android:orderInCategory="300"
         android:visible="true"
         app:showAsAction="always"></item>
+    <item
+        android:id="@+id/return_to_main"
+        android:orderInCategory="400"
+        android:title="Return to Main"
+        app:showAsAction="never" />
+
     <item
         android:id="@+id/settings"
         android:orderInCategory="400"

@@ -1,4 +1,173 @@
 <resources>
     <string name="app_name">toolbar2</string>
     <string name="action_settings">Settings</string>
+
+           <string name="string_stream_video">Stream Video Feed</string>
+        <string name="string_stream_pm">Stream Power Meter</string>
+        <string name="enable_bluetooth_text">
+        Bluetooth is not enabled on your device. Please enable Bluetooth to continue.
+    </string>
+        <string name="enable_bluetooth_title">Enable Bluetooth?</string>
+        <string name="okay">Okay</string>
+        <string name="cancel">Cancel</string>
+        <string name="attempt_connect">Attempting to connect to %1$s.</string>
+
+        <string name="dialog_wifi">
+        You are attempting to connect to a remote Sony camera using Sony\'s \'Camera Remote API\'. If you do not see the camera you are looking for, make sure that this device is connected to
+        the Sony camera\'s WiFi network.
+    </string>
+
+        <string name="turn_on_edge">Turn on Edge Detection</string>
+        <string name="turn_off_edge">Turn off Edge Detection</string>
+        <string name="turn_on_powermeter">Turn on Power Meter</string>
+        <string name="turn_off_powermeter">Turn off Power Meter</string>
+        <string name="apply_color_filter">Apply color filter</string>
+
+        <string name="power_meter_dialog_string">
+        Select your power meter below. If it isn\'t there, make sure you have Bluetooth paired this device to it.
+        For Quasar Power Meters, the PIN is most likely 1234.
+    </string>
+        <string name="headset_dialog_string">
+        Select your headset below. Make sure that you have paired that headset to this device,
+        this application is running on the headset, and Bluetooth is enabled on the headset.
+    </string>
+        <string name="title_activity_settings">Settings</string>
+
+        <!-- Strings related to Settings -->
+
+        <!-- Example General settings -->
+        <string name="pref_header_general">General</string>
+
+        <string name="pref_title_social_recommendations">Enable social recommendations</string>
+        <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+        <string name="pref_title_display_name">Display name</string>
+        <string name="pref_default_display_name">John Smith</string>
+
+        <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+        <string-array name="pref_example_list_titles">
+            <item>Always</item>
+            <item>When possible</item>
+            <item>Never</item>
+        </string-array>
+        <string-array name="pref_example_list_values">
+            <item>1</item>
+            <item>0</item>
+            <item>-1</item>
+        </string-array>
+
+        <!-- Example settings for Data & Sync -->
+        <string name="pref_header_data_sync">Data &amp; sync</string>
+
+        <string name="pref_title_sync_frequency">Sync frequency</string>
+        <string-array name="pref_sync_frequency_titles">
+            <item>15 minutes</item>
+            <item>30 minutes</item>
+            <item>1 hour</item>
+            <item>3 hours</item>
+            <item>6 hours</item>
+            <item>Never</item>
+        </string-array>
+        <string-array name="pref_sync_frequency_values">
+            <item>15</item>
+            <item>30</item>
+            <item>60</item>
+            <item>180</item>
+            <item>360</item>
+            <item>-1</item>
+        </string-array>
+
+        <string name="pref_title_system_sync_settings">System sync settings</string>
+
+        <!-- Example settings for Notifications -->
+        <string name="pref_header_notifications">Notifications</string>
+
+        <string name="pref_title_new_message_notifications">New message notifications</string>
+
+        <string name="pref_title_ringtone">Ringtone</string>
+        <string name="pref_ringtone_silent">Silent</string>
+
+        <string name="pref_title_vibrate">Vibrate</string>
+
+
+
+        <string name="about">About</string>
+        <string name="turn_on_fullscreen">Turn on fullscreen</string>
+        <string name="turn_off_fullscreen">Turn off fullscreen</string>
+
+        <string name="vzx_m100_about">
+        The Vuzix M100 is an Android powered headset that is capable of streaming video both on-device
+        and from the external device. The M100 needs
+        Bluetooth to communicate with the external device. In order to make the connections, simply
+        pair the two devices before using the application. You can use the on-device
+        buttons to navigate the various menus.
+    </string>
+        <string name="vzx_m300_about">
+        The Vuzix M300 is an Android powered headset that is capable of streaming video both on-device
+        and from the external device as well as understanding voice commands. The M300 needs
+        Bluetooth to communicate with the external device. In order to make the connections, simply
+        pair the two devices before using the application. You can use voice control or the on-device
+        buttons to navigate the various menus.
+    </string>
+        <string name="glass_about">
+        Google Glass provides a cutting edge interface to the laser. Glass supports voice commands
+        and streaming (via Bluetooth). In order to pair a Glass headset to an external device, use
+        the MyGlass application provided by Google. Once paired, you can communicate with the glass
+        headset using various gestures or voice commands.
+    </string>
+
+        <string name="start_recording">Start Recording</string>
+        <string name="stop_recording">Stop Recording</string>
+        <string name="enable_exposure">Enable Manual Exposure</string>
+        <string name="disable_exposure">Disable Manual Exposure</string>
+        <string name="pref_key_log_fullscreen">log_fullscreen</string>
+        <string name="pref_log_fullscreen_des">
+        When enabled, the device will show log messages via snackbars. If this is disabled, messages
+        will still be added to the log. Nice for large displays, not so nice otherwise.
+    </string>
+        <string name="pref_log_fullscreen_title">Log in Fullscreen</string>
+
+        <string name="use_server">
+        If you\'re going to point this device\'s camera at the laser, then choose this option.\n\nUsing the device as a server allows you to connect to other devices, such as
+        headsets and other phones or tablets.
+    </string>
+
+        <string name="use_client">
+        If you want to view the laser through this device from across the room, for example, choose this option.\n\nUsing the phone as a client will allow other devices acting
+        as a server to connect it and share their view.
+    </string>
+        <string name="how_use_label">How to Use This Device</string>
+
+        <string name="no_camera_permission_message_title">Camera Permission Needed</string>
+        <string name="no_camera_permission_message">This app requires additional user permission to use the camera on any devices running on Android 6.0 (Marshmellow) or newer.</string>
+
+        <string name="no_camera_permission_rationale_title">Camera Permission Needed</string>
+        <string name="no_camera_permission_rationale">This app requires manual user permission to operate the camera.\n\nIf you have selected the "Settings > apps > Lazer Helper > Storage. Once there open the overflow menu and select the "Clear Data" option and reopen this app.\n\nSelect the "CANCEL" button to exit the app.</string>
+
+        <string name="ask_for_camera_permission_again">Re-ask Permission</string>
+        <string name="exit_app">Exit App</string>
+        <string name="cmd_shift_color_red">shift color red</string>
+        <string name="cmd_shift_color_blue">shift color blue</string>
+        <string name="cmd_shift_color_none">shift color none</string>
+        <string name="pref_title_show_edges">Edge Toggle</string>
+        <string name="pref_title_show_color">Color Changer</string>
+        <string name="pref_title_show_pm">Connect to Power Meter</string>
+        <string name="pref_title_show_camera">Connect to Sony Camera</string>
+
+    <string-array name="orientation_listArray">
+        <item>0 degrees</item>
+        <item>90 degrees</item>
+        <item>180 degrees</item>
+        <item>270 degrees</item>
+    </string-array>
+    <string-array name="orientation_listArrayValues">
+        <item>0</item>
+        <item>90</item>
+        <item>180</item>
+        <item>270</item>
+    </string-array>
+
+
 </resources>
