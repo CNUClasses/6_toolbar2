@@ -7,6 +7,8 @@ import android.os.Bundle;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.res.ResourcesCompat;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +18,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private  ArrayList<Integer> my_color_shift_icon_IDs;
-    private int color_shift_icon_ID = 0;
+    private int next_icon = 0;
     private Toolbar toolbar;
     private boolean isCameraGreen = false;
     private boolean isRemoteClientConnected= false;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //put all my colored pallets in an arraylist to be cycled through
         my_color_shift_icon_IDs = new ArrayList<Integer>();
         my_color_shift_icon_IDs.add(R.drawable.ic_action_color_plain);
         my_color_shift_icon_IDs.add(R.drawable.ic_action_color_red);
@@ -46,10 +49,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void cycleToolBar_color_shift_icon(MenuItem item) {
-        //get next ID
-        color_shift_icon_ID = (color_shift_icon_ID+1)%(my_color_shift_icon_IDs.size());
-        //set the icon
-        item.setIcon(getResources().getDrawable(my_color_shift_icon_IDs.get(color_shift_icon_ID)));
+        //get next location in  arraylist using color_shift_icon_ID and %
+        next_icon = (next_icon+1)%(my_color_shift_icon_IDs.size());
+
+        //get the id of the icon
+        int next_icon_id = my_color_shift_icon_IDs.get(next_icon);
+
+        //set the icon in the toolbar
+        item.setIcon(ResourcesCompat.getDrawable(getResources(), next_icon_id, null));
     }
 
     @Override
@@ -139,6 +146,4 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }).show();
     }
-
-
 }
