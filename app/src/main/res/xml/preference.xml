@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <PreferenceCategory android:title="Show the following icons in the Appbar">
+        <CheckBoxPreference
+            android:key="enable_show_edges"
+             android:title="@string/pref_title_show_edges"
+            android:defaultValue="true"/>
+        <CheckBoxPreference
+            android:key="enable_show_color"
+           android:title="@string/pref_title_show_color"
+            android:defaultValue="true"/>
+        <CheckBoxPreference
+            android:key="enable_show_pm"
+             android:title="@string/pref_title_show_pm"
+            android:defaultValue="true"/>
+        <CheckBoxPreference
+            android:key="enable_show_camera"
+            android:title="@string/pref_title_show_camera"
+            android:defaultValue="true"/>
+
+        <!--<CheckBoxPreference-->
+            <!--android:key="@string/VC_ENABLED"-->
+            <!--android:summary="@string/voice_status"-->
+            <!--android:title="Voice Commands" />-->
+        <!--<CheckBoxPreference-->
+            <!--android:key="@string/PIX_ENABLED"-->
+            <!--android:summary="@string/recording_status"-->
+            <!--android:title="Recording" />-->
+        <!--<CheckBoxPreference-->
+            <!--android:key="@string/EXPOSURE_ENABLED"-->
+            <!--android:summary="@string/exposure_status"-->
+            <!--android:title="Exposure" />-->
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="on_device_settings"
+        android:title="Functional Settings">
+
+        <ListPreference
+            android:title="Orientation Settings"
+            android:summary="Select 'Toggle Orientation' rotation amount"
+            android:key="toggle_orientation_angle"
+            android:defaultValue="90"
+            android:entries="@array/orientation_listArray"
+            android:entryValues="@array/orientation_listArrayValues" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="help_guides"
+        android:title="About and Guides">
+
+        <Preference
+            android:key="pref_about_screen"
+            android:title="About">
+
+            <intent android:action="edu.cnu.nasa.lazerapplication.AboutActivity" />
+
+        </Preference>
+        <PreferenceScreen
+            android:key="guides"
+            android:title="Device guides">
+            <Preference
+                android:key="vzx_m_300"
+                android:title="Vuzix M300" />
+
+            <Preference
+                android:key="vzx_m_100"
+                android:title="Vuzix M100" />
+
+
+            <Preference
+                android:key="google_glass"
+                android:title="Google Glass" />
+
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
